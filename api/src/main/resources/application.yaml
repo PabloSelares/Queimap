@@ -28,3 +28,12 @@ spring:
     init:
       mode: never
       schema-locations: classpath:init.sql
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    url: /v3/api-docs.yaml
+    config-url: /v3/api-docs/swagger-config
+  writer-with-default-pretty-printer: true
