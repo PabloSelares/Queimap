@@ -9,7 +9,7 @@ const Header = () => {
       style={{ backgroundImage: `url(${Banner})` }}
       id="Header"
     >
-      <Navbar />
+
       <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
         <h2 className="text-5xl sm:text-6xl md:text-[75px] inline-block max-w-3xl font-semibold pt-20">
           Viva a cultura, conheça a história, encante-se com{" "}
