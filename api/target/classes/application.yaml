@@ -1,18 +1,30 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+jwt:
+  public:
+    key: classpath:authz.pub
+  private:
+    key: classpath:authz.pem
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/queimap
     username: postgres
     password: postgres
+
   jpa:
     hibernate:
       ddl-auto: update
-server:
-  error:
-    include-message: always
+    show_sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
 
-logging:
-  pattern:
-    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
-  level:
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  sql:
+    init:
+      mode: never
+      schema-locations: classpath:init.sql
