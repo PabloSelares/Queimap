@@ -13,7 +13,7 @@ async function parseResponseBody(res) {
 
 export const auth = {
   login: async (email, password) => {
-    const res = await fetch(`${API_BASE}/api/auth/login`, {
+    const res = await fetch(`${API_BASE}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -38,7 +38,7 @@ export const auth = {
   },
 
   getProfile: async (token) => {
-    const res = await fetch(`${API_BASE}/api/users/me`, {
+    const res = await fetch(`${API_BASE}/user/me`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -60,7 +60,7 @@ export const auth = {
   },
 
   register: async (payload) => {
-    const res = await fetch(`${API_BASE}/api/auth/register`, {
+    const res = await fetch(`${API_BASE}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),

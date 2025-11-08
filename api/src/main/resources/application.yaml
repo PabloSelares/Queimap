@@ -13,7 +13,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/queimap
     username: postgres
-    password: 2656
+    password: postgres
     driver-class-name: org.postgresql.Driver
 
   jpa:
